@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://d11g2438dkel7"]
+
+[ext_resource type="Script" uid="uid://bi7km42n6gdc" path="res://scripts/materials/building_material_controller.gd" id="1_flk1x"]
+[ext_resource type="PackedScene" uid="uid://dggtasoaw0ojr" path="res://art/glbs/house_kit/glb/house_base.glb" id="2_e4ryi"]
+[ext_resource type="PackedScene" uid="uid://de16uexh7lhtw" path="res://art/glbs/house_kit/glb/door.glb" id="3_58gnl"]
+[ext_resource type="PackedScene" uid="uid://b0iy4ybbur38l" path="res://art/glbs/house_kit/glb/window.glb" id="4_58gnl"]
+[ext_resource type="PackedScene" uid="uid://c6l0qfehpfsdj" path="res://art/glbs/house_kit/glb/chimney.glb" id="5_1nm75"]
+
+[node name="house_two" type="Node3D" unique_id=1834769114]
+script = ExtResource("1_flk1x")
+bindings = Array[Dictionary]([{
+"mesh_path": NodePath("house_base/house_base"),
+&"role": "slot:house_base/house_base:1",
+&"style_role": "two",
+"surface": 1,
+"surface_name": "two"
+}, {
+"mesh_path": NodePath("house_base/house_base"),
+&"role": "slot:house_base/house_base:2",
+&"style_role": "three",
+"surface": 2,
+"surface_name": "three"
+}, {
+"mesh_path": NodePath("house_base/house_base"),
+&"role": "slot:house_base/house_base:0",
+&"style_role": "one",
+"surface": 0,
+"surface_name": "one"
+}, {
+"mesh_path": NodePath("window/window"),
+&"role": "slot:window/window:0",
+&"style_role": "window_glass",
+"surface": 0,
+"surface_name": "window_glass"
+}, {
+"mesh_path": NodePath("window2/window"),
+&"role": "slot:window2/window:0",
+&"style_role": "window_glass",
+"surface": 0,
+"surface_name": "window_glass"
+}, {
+"mesh_path": NodePath("window/window"),
+&"role": "slot:window/window:1",
+&"style_role": "window_base",
+"surface": 1,
+"surface_name": "window_base"
+}, {
+"mesh_path": NodePath("window2/window"),
+&"role": "slot:window2/window:1",
+&"style_role": "window_base",
+"surface": 1,
+"surface_name": "window_base"
+}, {
+"mesh_path": NodePath("door/door"),
+&"role": "slot:door/door:0",
+&"style_role": "one",
+"surface": 0,
+"surface_name": "one"
+}, {
+"mesh_path": NodePath("door/door"),
+&"role": "slot:door/door:1",
+&"style_role": "two",
+"surface": 1,
+"surface_name": "two"
+}])
+local_overrides = {
+"slot:door/door:0": {
+"texture_set": "wood",
+"tint": Color(0.46117365, 0.48330134, 0.577106, 1),
+"uv_rotation": 90.0,
+"uv_scale": Vector2(3.101, 3.801)
+},
+"slot:door/door:1": {
+"texture_set": "wood",
+"tint": Color(0.6891321, 0.45535547, 0.3695015, 1),
+"uv_rotation": 90.0,
+"uv_scale": Vector2(2.001, 2.001)
+},
+"slot:house_base/house_base:0": {
+"texture_set": "base_color",
+"tint": Color(0.1933465, 0.21330884, 0.26606345, 1)
+},
+"slot:house_base/house_base:1": {
+"texture_set": "wood",
+"tint": Color(0.4863655, 0.6195499, 0.5305406, 1),
+"uv_scale": Vector2(6.401, -0.099)
+},
+"slot:house_base/house_base:2": {
+"texture_set": "roofing",
+"tint": Color(0.2563643, 0.26842752, 0.33082592, 1),
+"uv_scale": Vector2(1.001, 1.101)
+},
+"slot:window/window:0": {
+"texture_set": "window",
+"tint": Color(0.9300906, 1.70714, 2.0775936, 1)
+},
+"slot:window/window:1": {
+"texture_set": "wood",
+"tint": Color(0.49096215, 0.43310857, 0.54612356, 1),
+"uv_rotation": 90.0
+},
+"slot:window2/window:0": {
+"texture_set": "window",
+"tint": Color(0.9300906, 1.70714, 2.0775936, 1)
+},
+"slot:window2/window:1": {
+"texture_set": "wood",
+"tint": Color(0.49096215, 0.43310857, 0.54612356, 1),
+"uv_rotation": 90.0
+}
+}
+linked_scene_slots = PackedStringArray("res://art/glbs/house_kit/glb/window.glb|window|0|window_glass", "res://art/glbs/house_kit/glb/window.glb|window|1|window_base")
+metadata/_custom_type_script = "uid://bi7km42n6gdc"
+
+[node name="house_base" parent="." unique_id=1149379989 instance=ExtResource("2_e4ryi")]
+transform = Transform3D(1, 0, 0, 0, 1.94, 0, 0, 0, 0.63, 0, 0, 0)
+
+[node name="door" parent="." unique_id=760639713 instance=ExtResource("3_58gnl")]
+transform = Transform3D(1.42, 0, 0, 0, 1.42, 0, 0, 0, 1.42, 0, 0, 3.8320851)
+
+[node name="window" parent="." unique_id=401050834 instance=ExtResource("4_58gnl")]
+transform = Transform3D(-1.81, 0, -2.733024e-07, 0, 1.81, 0, 2.733024e-07, 0, -1.81, -1.8846014, 4.648261, 3.8701506)
+
+[node name="window2" parent="." unique_id=1693000619 instance=ExtResource("4_58gnl")]
+transform = Transform3D(-1.81, 0, -2.733024e-07, 0, 1.81, 0, 2.733024e-07, 0, -1.81, 1.885, 4.648, 3.869812)
+
+[node name="chimney" parent="." unique_id=504174937 instance=ExtResource("5_1nm75")]
+transform = Transform3D(2.8508995, -0.22797574, 0, 0.22797574, 2.8508995, 0, 0, 0, 2.86, -2.061285, 12.073228, -1.4593818)
+visible = false
